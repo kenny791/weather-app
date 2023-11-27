@@ -10,7 +10,11 @@ import snow_icon from '../Assets/snow.png'
 import wind_icon from '../Assets/wind.png'
 
 export const WeatherApp = () => {
-  return (
+  
+    let api_key = "87b173ea22b2e0af751832b026578384"
+    
+    
+    return (
     <div className='container'>
         <div className="top-bar">
             <input type="text" className="cityInput" placeholder='Search'/>
