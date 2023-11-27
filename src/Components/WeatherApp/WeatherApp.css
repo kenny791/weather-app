@@ -51,3 +51,11 @@
     font-size: 120px;
     font-weight: 400;
 }
+
+.weather-location{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 69px;
+    font-weight: 400;
+}
