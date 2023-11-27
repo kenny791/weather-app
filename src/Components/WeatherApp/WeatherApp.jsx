@@ -13,13 +13,21 @@ export const WeatherApp = () => {
   
     let api_key = "87b173ea22b2e0af751832b026578384"
     
-    const search = () => {
+    const search = async () => {
         const element = document.getElementsByClassName("cityInput")
         if(element[0].value === ""){
             return 0
         }
     
         let url =  `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`
+        
+        let response = await fetch(url)
+        let data = await response.json()
+
+        const humidity = document.getElementsByClassName("humidity-percent")
+        const wind = document.getElementsByClassName("wind-rate")
+        const temperature = document.getElementsByClassName("weather-temp")
+        const location = document.getElementsByClassName("weather-location")
         
     }
     
@@ -47,7 +55,7 @@ export const WeatherApp = () => {
             <div className="element">
                 <img src={wind_icon} alt="" className="icon" />
                 <div className="data">
-                    <div className="humidity-percent">18km/h</div>
+                    <div className="wind-rate">18km/h</div>
                     <div className="text">Wind Speed</div>
                 </div>
             </div>
